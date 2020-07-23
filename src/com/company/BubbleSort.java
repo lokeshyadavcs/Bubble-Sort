@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BubbleSort {
     Scanner sc = new Scanner(System.in);
-
+    RandomArray obj2=new RandomArray();
     public void typesofArray() {
         System.out.println("Please enter the choice of Sorting");
         System.out.println("Press 1 for Integer type Sorting");
@@ -47,24 +47,40 @@ public class BubbleSort {
     public void intarray() {
         System.out.println("Enter the no of elements");
         int n = sc.nextInt();
-
         int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
+        System.out.println("Do you want to input yourself or to generate it randomly ,press 1 for user input and 2 for random generate");
+        int choice=sc.nextInt();
+        if (choice==1){
+
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.nextInt();
+            }
+
+            bubbleSort(a, n);
+
+        }
+        else{
+            obj2.intarray2(a,n);
         }
 
-        bubbleSort(a, n);
+
 
 
     }
 
     public void chararray() {
-        System.out.println("Please input the array without space or commas or other things");
-        String str = sc.next();
-        char[] acc = str.toCharArray();
-        int n = acc.length;
-        bubbleSort(acc, n);
-
+        System.out.println("Do you want to input yourself or to generate it randomly ,press 1 for user input and 2 for random generate");
+        int choice=sc.nextInt();
+        if (choice==1) {
+            System.out.println("Please input the array without space or commas or other things");
+            String str = sc.next();
+            char[] acc = str.toCharArray();
+            int n = acc.length;
+            bubbleSort(acc, n);
+        }
+        else{
+            obj2.chararray2();
+        }
 
     }
 
@@ -73,11 +89,16 @@ public class BubbleSort {
         int n = sc.nextInt();
 
         long[] a = new long[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextLong();
+        System.out.println("Do you want to input yourself or to generate it randomly ,press 1 for user input and 2 for random generate");
+        int choice=sc.nextInt();
+        if (choice==1) {
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.nextLong();
+            }
+            bubbleSort(a, n);
+        }else{
+            obj2.longarray2(a,n);
         }
-        bubbleSort(a, n);
-
     }
 
     public void booleanarray() {
@@ -85,11 +106,17 @@ public class BubbleSort {
         int n = sc.nextInt();
 
         boolean[] a = new boolean[n];
+        System.out.println("Do you want to input yourself or to generate it randomly ,press 1 for user input and 2 for random generate");
+        int choice=sc.nextInt();
+        if (choice==1) {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextBoolean();
         }
         bubbleSort(a, n);
 
+    }else{
+            obj2.booleanarray(a,n);
+        }
     }
 
     public void stringarray() {
@@ -97,10 +124,16 @@ public class BubbleSort {
         int n = sc.nextInt();
 
         String[] a = new String[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.next();
+        System.out.println("Do you want to input yourself or to generate it randomly ,press 1 for user input and 2 for random generate");
+        int choice=sc.nextInt();
+        if (choice==1) {
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.next();
+            }
+            bubbleSort(a, n);
+        }else {
+            obj2.stringarray(a,n);
         }
-        bubbleSort(a, n);
 
     }
 
