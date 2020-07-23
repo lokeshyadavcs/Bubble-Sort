@@ -1,18 +1,23 @@
 package com.company;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class RandomArray {
+    Scanner sc=new Scanner(System.in);
     Random rand = new Random();
     int b;
+    BubbleSort obj=new BubbleSort();
 
 
-    public void intarray2(int[] a, int n) {
-
+    public void intarray2() {
+        System.out.println("Enter the no of elements");
+        int n = sc.nextInt();
+        int[] a = new int[n];
         for (int i = 0; i < n; i++) {
             a[i] = rand.nextInt(100);
         }
-        bubbleSort(a,n);
+        obj.bubbleSort(a,n);
 
 
     }
@@ -26,135 +31,56 @@ public class RandomArray {
             b = rand.nextInt(100);
             a[i] = (char) b;
         }
-        bubbleSort(a,n);
+        obj.bubbleSort(a,n);
 
 
     }
 
-    public void longarray2(long[] a, int n) {
+    public void longarray2() {
+        System.out.println("Enter the no of elements");
+        int n = sc.nextInt();
+
+        long[] a = new long[n];
 
 
         for (int i = 0; i < n; i++) {
             a[i] = rand.nextLong();
         }
 
-        bubbleSort(a,n);
+        obj.bubbleSort(a,n);
     }
 
-    public void booleanarray(boolean[] a, int n) {
+    public void booleanarray() {
+        System.out.println("Enter the no of elements");
+        int n = sc.nextInt();
+
+        boolean[] a = new boolean[n];
 
 
         for (int i = 0; i < n; i++) {
             a[i] = rand.nextBoolean();
         }
-        bubbleSort(a,n);
+        obj.bubbleSort(a,n);
 
     }
 
-    public void stringarray(String[] a, int n) {
+    public void stringarray() {
+        System.out.println("Enter the no of elements");
+        int n = sc.nextInt();
+
+        String[] a = new String[n];
         String str="";
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < rand.nextInt(15); j++) {
-                b = rand.nextInt(100);
+                b = rand.nextInt(500);
                 str =str + (char) b;
             }a[i]=str;
         }
-        bubbleSort(a,n);
-
-
-    }
-    public void bubbleSort(int[] a, int n) {
-        int i, j, temp;
-        for (i = 0; i < n - 1; i++) {
-            for (j = 0; j < n - 1 - i; j++) {
-                if (a[j] > a[j + 1]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-        for (i = 0; i < n; i++) {
-            System.out.println(a[i]);
-        }
-
-    }
-
-    public void bubbleSort(long[] a, int n) {
-        int i, j;
-        long temp;
-        for (i = 0; i < n - 1; i++) {
-            for (j = 0 ; j < n - 1 - i; j++) {
-                if (a[j] > a[j + 1]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-        for (i = 0; i < n; i++) {
-            System.out.println(a[i]);
-        }
+        obj.bubbleSort(a,n);
 
 
     }
 
-    public void bubbleSort(char[] a, int n) {
-        int i, j;
-        char temp;
-        for (i = 0; i < n - 1; i++) {
-            for (j = 0 ; j < n - 1 - i; j++) {
-                if (a[j] > a[j + 1]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-        for (i = 0; i < n; i++) {
-            System.out.println(a[i]);
-        }
-
-
-    }
-
-    public void bubbleSort(boolean[] a, int n) {
-        int i, j;
-        boolean temp;
-        for (i = 0; i < n - 1; i++) {
-            for (j = 0; j < n - 1 - i; j++) {
-                if (a[j]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-        for (i = 0; i < n; i++) {
-            System.out.println(a[i]);
-        }
-
-
-    }
-
-    public void bubbleSort(String[] a, int n) {
-        int i, j;
-        String temp;
-        for (i = 0; i < n - 1; i++) {
-            for (j = 0; j < n - 1 - i; j++) {
-                if (a[j].compareTo(a[j + 1]) > 0) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-        for (i = 0; i < n; i++) {
-            System.out.println(a[i]);
-        }
-
-
-    }
 
 }
